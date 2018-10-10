@@ -13,9 +13,9 @@ public class ChatBotRunner
 	 */
 	public static void main(String[] args)
 	{
-		ChatBot1 chatbot1 = new ChatBot1();
-		ChatBot2 chatbot2 = new ChatBot2();
-		ChatBot3 chatbot3 = new ChatBot3();
+		ChatBlackButler_Angela chatbot1 = new ChatBlackButler_Angela();
+		ChatFoodWar_Edmund chatbot2 = new ChatFoodWar_Edmund();
+		ChatRwby_Rachel chatbot3 = new ChatRwby_Rachel();
 		
 
 		Scanner in = new Scanner (System.in);
