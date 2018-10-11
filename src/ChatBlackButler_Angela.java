@@ -58,6 +58,12 @@ public class ChatBlackButler_Angela
 		{
 			response = "Say something, please.";
 		}
+		// USE THIS AS EXAMPLE. you caN CHAnge goal to be a certain word in sentence to give answer.
+        // response can be changed based on the found word
+		else if (findKeyword(statement, "title") >= 0)
+		{
+			response = "The name of this anime is Black Butler";
+		}
 
 		else if (findKeyword(statement, "no") >= 0)
 		{
@@ -97,6 +103,8 @@ public class ChatBlackButler_Angela
 		
 		return response;
 	}
+
+
 	
 	/**
 	 * Take a statement with "I want to <something>." and transform it into 
@@ -119,6 +127,7 @@ public class ChatBlackButler_Angela
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "Why do you want to " + restOfStatement + "?";
 	}
+
 
 	
 	/**
