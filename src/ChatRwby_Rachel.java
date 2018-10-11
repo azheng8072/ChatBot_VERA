@@ -9,7 +9,8 @@ import java.util.Scanner;
  */
 public class ChatRwby_Rachel
 {
-	//emotion can alter the way our bot responds. Emotion can become more negative or positive over time.
+	private final ChatBot chatBot = new ChatBot();
+	// emotion can alter the way our bot responds. Emotion can become more negative or positive over time.
 	int emotion = 0;
 
 	static String weapons[] = {"Ruby has a large scythe blade for close range that transforms into a 'rifle' mode for melee and uses Dust ammunition for elemental attacks.", "Yang uses shot guantlets that allow close combat or ranged combat sending kinetic energy or shells.", "Weiss has a Dust rapier for ranged, melee and elemental attacks."};
@@ -59,39 +60,30 @@ public class ChatRwby_Rachel
 		if (statement.length() == 0)
 		{
 			response = "Do you like RWBY?";
-		}
-
-		else if (findKeyword(statement, "pyrrha") >= 0)
+		} else if (chatBot.findKeyword(statement, "pyrrha") >= 0)
 		{
 			response = "Don't mention her.";
                 	emotion--;
-		}
-		
-		else if (findKeyword(statement, "weapons") >= 0)
+		} else if (chatBot.findKeyword(statement, "weapons") >= 0)
 		{
 			int random = (int) (3* Math.random());
 			response = "A lot of the weapons used in RWBY are based on real weapons but are designed as transformable in order to increase their effectiveness in combat. " + weapons[random];
 			emotion++;
-		}
-		else if (findKeyword(statement, "review") >= 0)
+		} else if (chatBot.findKeyword(statement, "review") >= 0)
 		{
 			response = "RWBY has relatively good ratings with an 8.3 out of 10 on IMDb.";
 			emotion++;
-		}
-		else if (findKeyword(statement, "goldman") >= 0)
+		} else if (chatBot.findKeyword(statement, "goldman") >= 0)
 		{
 			response = "Go for the gold, man.";
 			emotion++;
 		}
 
 		// Response transforming I want to statement
-		else if (findKeyword(statement, "I want to", 0) >= 0)
-		{
-			response = transformIWantToStatement(statement);
-		}
-		else if (findKeyword(statement, "I want",0) >= 0)
-		{
-			response = transformIWantStatement(statement);
+		else if (chatBot.findKeyword(statement, "I want to", 0) >= 0) {
+			response = chatBot.transformIWantToStatement(statement);
+		} else if (chatBot.findKeyword(statement, "I want", 0) >= 0) {
+			response = chatBot.transformIWantStatement(statement);
 		}	
 		else
 		{
@@ -109,18 +101,7 @@ public class ChatRwby_Rachel
 	 */
 	private String transformIWantToStatement(String statement)
 	{
-		//  Remove the final period, if there is one
-		statement = statement.trim();
-		String lastChar = statement.substring(statement
-				.length() - 1);
-		if (lastChar.equals("."))
-		{
-			statement = statement.substring(0, statement
-					.length() - 1);
-		}
-		int psn = findKeyword (statement, "I want to", 0);
-		String restOfStatement = statement.substring(psn + 9).trim();
-		return "Why do you want to " + restOfStatement + "?";
+		return chatBot.transformIWantToStatement(statement);
 	}
 
 	
@@ -132,18 +113,7 @@ public class ChatRwby_Rachel
 	 */
 	private String transformIWantStatement(String statement)
 	{
-		//  Remove the final period, if there is one
-		statement = statement.trim();
-		String lastChar = statement.substring(statement
-				.length() - 1);
-		if (lastChar.equals("."))
-		{
-			statement = statement.substring(0, statement
-					.length() - 1);
-		}
-		int psn = findKeyword (statement, "I want", 0);
-		String restOfStatement = statement.substring(psn + 6).trim();
-		return "Would you really be happy if you had " + restOfStatement + "?";
+		return chatBot.transformIWantStatement(statement);
 	}
 	
 	
@@ -155,21 +125,7 @@ public class ChatRwby_Rachel
 	 */
 	private String transformIYouStatement(String statement)
 	{
-		//  Remove the final period, if there is one
-		statement = statement.trim();
-		String lastChar = statement.substring(statement
-				.length() - 1);
-		if (lastChar.equals("."))
-		{
-			statement = statement.substring(0, statement
-					.length() - 1);
-		}
-		
-		int psnOfI = findKeyword (statement, "I", 0);
-		int psnOfYou = findKeyword (statement, "you", psnOfI);
-		
-		String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
-		return "Why do you " + restOfStatement + " me?";
+		return chatBot.transformIYouStatement(statement);
 	}
 	
 
@@ -194,49 +150,7 @@ public class ChatRwby_Rachel
 	private int findKeyword(String statement, String goal,
 			int startPos)
 	{
-		String phrase = statement.trim().toLowerCase();
-		goal = goal.toLowerCase();
-
-		// The only change to incorporate the startPos is in
-		// the line below
-		int psn = phrase.indexOf(goal, startPos);
-
-		// Refinement--make sure the goal isn't part of a
-		// word
-		while (psn >= 0)
-		{
-			// Find the string of length 1 before and after
-			// the word
-			String before = " ", after = " ";
-			if (psn > 0)
-			{
-				before = phrase.substring(psn - 1, psn);
-			}
-			if (psn + goal.length() < phrase.length())
-			{
-				after = phrase.substring(
-						psn + goal.length(),
-						psn + goal.length() + 1);
-			}
-
-			// If before and after aren't letters, we've
-			// found the word
-			if (((before.compareTo("a") < 0) || (before
-					.compareTo("z") > 0)) // before is not a
-											// letter
-					&& ((after.compareTo("a") < 0) || (after
-							.compareTo("z") > 0)))
-			{
-				return psn;
-			}
-
-			// The last position didn't work, so let's find
-			// the next, if there is one.
-			psn = phrase.indexOf(goal, psn + 1);
-
-		}
-
-		return -1;
+		return chatBot.findKeyword(statement, goal, startPos);
 	}
 	
 	/**
@@ -249,7 +163,7 @@ public class ChatRwby_Rachel
 	 */
 	private int findKeyword(String statement, String goal)
 	{
-		return findKeyword (statement, goal, 0);
+		return chatBot.findKeyword(statement, goal);
 	}
 	
 
