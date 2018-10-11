@@ -1,3 +1,4 @@
+//TRANSFORM just means to turn the question around to give the answer.
 import java.util.Random;
 import java.util.Scanner;
 
