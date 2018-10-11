@@ -12,6 +12,8 @@ public class ChatRwby_Rachel
 	//emotion can alter the way our bot responds. Emotion can become more negative or positive over time.
 	int emotion = 0;
 
+	static String weapons[] = {"Ruby has a large scythe blade for close range that transforms into a 'rifle' mode for melee and uses Dust ammunition for elemental attacks.", "Yang uses shot guantlets that allow close combat or ranged combat sending kinetic energy or shells.", "Weiss has a Dust rapier for ranged, melee and elemental attacks."};
+
 	/**
 	 * Runs the conversation for this particular chatbot, should allow switching to other chatbots.
 	 * @param statement the statement typed by the user
@@ -56,23 +58,24 @@ public class ChatRwby_Rachel
 		
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "Do you like RWBY?";
 		}
 
-		else if (findKeyword(statement, "no") >= 0)
+		else if (findKeyword(statement, "pyrrha") >= 0)
 		{
-			response = "Why so negative?";
+			response = "Don't mention her.";
                 	emotion--;
 		}
 		
-		else if (findKeyword(statement, "levin") >= 0)
+		else if (findKeyword(statement, "weapons") >= 0)
 		{
-			response = "More like LevinTheDream, amiright?";
+			int random = (int) (3* Math.random());
+			response = "A lot of the weapons used in RWBY are based on real weapons but are designed as transformable in order to increase their effectiveness in combat. " + weapons[random];
 			emotion++;
 		}
-		else if (findKeyword(statement, "folwell") >= 0)
+		else if (findKeyword(statement, "review") >= 0)
 		{
-			response = "Watch your backpacks, Mr. Folwell doesn't fall well.";
+			response = "RWBY has relatively good ratings with an 8.3 out of 10 on IMDb.";
 			emotion++;
 		}
 		else if (findKeyword(statement, "goldman") >= 0)
