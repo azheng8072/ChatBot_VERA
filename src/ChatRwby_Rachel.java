@@ -13,7 +13,7 @@ public class ChatRwby_Rachel
 	// emotion can alter the way our bot responds. Emotion can become more negative or positive over time.
 	int emotion = 0;
 
-	static String weapons[] = {"Ruby has a large scythe blade for close range that transforms into a 'rifle' mode for melee and uses Dust ammunition for elemental attacks.", "Yang uses shot guantlets that allow close combat or ranged combat sending kinetic energy or shells.", "Weiss has a Dust rapier for ranged, melee and elemental attacks."};
+	private static String weapons[] = {"Ruby has a large scythe blade for close range that transforms into a 'rifle' mode for melee and uses Dust ammunition for elemental attacks.", "Yang uses shot guantlets that allow close combat or ranged combat sending kinetic energy or shells.", "Weiss has a Dust rapier for ranged, melee and elemental attacks."};
 
 	/**
 	 * Runs the conversation for this particular chatbot, should allow switching to other chatbots.
@@ -72,11 +72,26 @@ public class ChatRwby_Rachel
 		} else if (chatBot.findKeyword(statement, "review") >= 0)
 		{
 			response = "RWBY has relatively good ratings with an 8.3 out of 10 on IMDb.";
-			emotion++;
+		} else if (chatBot.findKeyword(statement, "software") >= 0)
+		{
+			response = "RWBY is made with Poser Pro animation software, which is also used for Rooster Teeth Production's other series such as Red vs. Blue.";
+		} else if (chatBot.findKeyword(statement, "created") >= 0)
+		{
+			response = "RWBY was created bt Monty Oum, an American animator and writer. He died from an allergic reaction during a medical procedure that put him into a coma at the afe of 33.";
+			emotion--;
+		} else if (chatBot.findKeyword(statement, "Rooster Teeth") >= 0)
+		{
+			response = "RTX";
+		} else if (chatBot.findKeyword(statement, "grimm eclipse") >= 0 || chatBot.findKeyword(statement, "game") >= 0 )
+		{
+			response = "RWBY has a 4 player, online co-op game called Grimm Eclipse. It was originally a fanmade game named Grim Eclipse before the creator Jordan Scott was hired by Rooster Teeth.";
 		} else if (chatBot.findKeyword(statement, "goldman") >= 0)
 		{
 			response = "Go for the gold, man.";
 			emotion++;
+		} else if (chatBot.findKeyword(statement, "help") >= 0)
+		{
+			response = "https://www.google.com";
 		}
 
 		// Response transforming I want to statement
@@ -190,9 +205,9 @@ public class ChatRwby_Rachel
 			"Hmmm.",
 			"Do you really think so?",
 			"You don't say.",
-			"It's all boolean to me.",
-			"So, would you like to go for a walk?",
-			"Could you say that again?"
+			"Lalalalala",
+			"So, who's your favorite RWBY character?",
+			"Say that again?"
 	};
 	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
 	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
