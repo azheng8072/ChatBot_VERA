@@ -194,15 +194,13 @@ public class ChatBlackButler_Angela
 		return randomHappyResponses [r.nextInt(randomHappyResponses.length)];
 	}
 	
-	private String [] randomNeutralResponses = {"Interesting, tell me more",
-			"Hmmm.",
-			"Do you really think so?",
-			"You don't say.",
-			"It's all boolean to me.",
-			"So, would you like to go for a walk?",
+	private String [] randomNeutralResponses = {"Interesting...what did you say again?",
+			"Hmmm...still dont get you",
+			"I don't understand",
+			"you mean?",
 			"Could you say that again?"
 	};
-	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
-	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
+	private String [] randomAngryResponses = {"Bubbles!", "Hmph", "What are you saying!"};
+	private String [] randomHappyResponses = {"Hurray!", "Yippie!", "Yahoo!"};
 	
 }
