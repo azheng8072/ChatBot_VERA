@@ -60,6 +60,17 @@ public class ChatRwby_Rachel
 		if (statement.length() == 0)
 		{
 			response = "Do you like RWBY?";
+		} else if (chatBot.findKeyword(statement, "yes") >= 0)
+		{
+			response = "Me too!";
+			emotion++;
+		}  else if (chatBot.findKeyword(statement, "no") >= 0)
+		{
+			response = "What, why?";
+			emotion--;
+		}  else if (chatBot.findKeyword(statement, "rwby") >= 0)
+		{
+			response = "Do you like RWBY?";
 		} else if (chatBot.findKeyword(statement, "pyrrha") >= 0)
 		{
 			response = "Don't mention her.";
@@ -85,13 +96,9 @@ public class ChatRwby_Rachel
 		} else if (chatBot.findKeyword(statement, "grimm eclipse") >= 0 || chatBot.findKeyword(statement, "game") >= 0 )
 		{
 			response = "RWBY has a 4 player, online co-op game called Grimm Eclipse. It was originally a fanmade game named Grim Eclipse before the creator Jordan Scott was hired by Rooster Teeth.";
-		} else if (chatBot.findKeyword(statement, "goldman") >= 0)
+		} else if (chatBot.findKeyword(statement, "characters") >= 0)
 		{
-			response = "Go for the gold, man.";
-			emotion++;
-		} else if (chatBot.findKeyword(statement, "help") >= 0)
-		{
-			response = "https://www.google.com";
+			response = "RWBY has a lot of characters, a master list can be found here: https://en.wikipedia.org/wiki/List_of_RWBY_characters";
 		}
 
 		// Response transforming I want to statement
@@ -205,7 +212,7 @@ public class ChatRwby_Rachel
 			"Hmmm.",
 			"Do you really think so?",
 			"You don't say.",
-			"Lalalalala",
+			"Mmm",
 			"So, who's your favorite RWBY character?",
 			"Say that again?"
 	};

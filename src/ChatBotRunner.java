@@ -17,6 +17,8 @@ public class ChatBotRunner
 		ChatFoodWar_Edmund chatbot2 = new ChatFoodWar_Edmund();
 		ChatRwby_Rachel chatbot3 = new ChatRwby_Rachel();
 		ChatReborn_Vincent chatbot4 = new ChatReborn_Vincent();
+
+		
 		
 
 		Scanner in = new Scanner (System.in);
