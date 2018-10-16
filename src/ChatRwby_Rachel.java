@@ -137,7 +137,8 @@ public class ChatRwby_Rachel
 	{
 		return chatBot.transformIWantStatement(statement);
 	}
-	
+
+	//private String tranformMyFave(String statement) { return chatBot.tranformMyFave(statement); }
 	
 	/**
 	 * Take a statement with "I <something> you" and transform it into 
@@ -216,7 +217,7 @@ public class ChatRwby_Rachel
 			"So, who's your favorite RWBY character?",
 			"Say that again?"
 	};
-	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
-	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
+	private String [] randomAngryResponses = {"Pssh", "Harumph", "k."};
+	private String [] randomHappyResponses = {":D", "Today is a great day", "We should watch something together!"};
 	
 }
