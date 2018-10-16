@@ -42,7 +42,7 @@ public class ChatBlackButler_Angela
 	 */	
 	public String getGreeting()
 	{
-		return "Hi, what is up?";
+		return "Hi, what's up?";
 	}
 	
 	/**
@@ -66,6 +66,10 @@ public class ChatBlackButler_Angela
 		{
 			response = "The name of this anime is Black Butler.\nBlack Butler is a Japanese manga series written and illustrated by Yana Toboso. \nIt debuted on September 16, 2006, it has been serialized in Square Enix's shōnen manga magazine Monthly GFantasy.";
         }
+		else if (chatBot.findKeyword(statement, "black") >= 0 || chatBot.findKeyword(statement, "butler") >= 0 || chatBot.findKeyword(statement, "anime") >= 0)
+		{
+			response = "Black Butler is a Japanese manga series written and illustrated by Yana Toboso. \nIt debuted on September 16, 2006, it has been serialized in Square Enix's shōnen manga magazine Monthly GFantasy.\nIn July 2008, it was announced that an anime adaption of Black Butler, directed by Toshiya Shinohara and produced by A-1 Pictures, was expected.\nIt premiered in October 2008 and broadcast on MBS as well as the TBS";
+		}
         else if (chatBot.findKeyword(statement, "plot") >= 0 || chatBot.findKeyword(statement, "what is it about") >= 0)
 		{
 			response = "The plot is about a young boy sells his soul to a demon in order to avenge his family's death and successfully lead their influential toy manufacturing company. \nThe demon takes the form of a loyal butler who's always dressed in black and is required to protect, serve and arrive whenever summoned by his young master Ciel.";
@@ -89,12 +93,12 @@ public class ChatBlackButler_Angela
             response = chatBot.transformIWantToStatement(statement);
         } else if (chatBot.findKeyword(statement, "I want", 0) >= 0) {
             response = chatBot.transformIWantStatement(statement);
-		}	
+		}
 		else
 		{
 			response = getRandomResponse();
 		}
-		
+
 		return response;
 	}
 
@@ -198,7 +202,8 @@ public class ChatBlackButler_Angela
 			"Hmmm...still dont get you",
 			"I don't understand",
 			"you mean?",
-			"Could you say that again?"
+			"Could you say that again?",
+			"Do you want to know something about Black Butler?"
 	};
 	private String [] randomAngryResponses = {"Bubbles!", "Hmph", "What are you saying!"};
 	private String [] randomHappyResponses = {"Hurray!", "Yippie!", "Yahoo!"};
