@@ -99,6 +99,11 @@ public class ChatBlackButler_Angela
 			response = getRandomResponse();
 		}
 
+        transformIWantToStatement(statement);
+        transformIWantStatement(statement);
+        transformIYouStatement(statement);
+
+
 		return response;
 	}
 
@@ -111,8 +116,20 @@ public class ChatBlackButler_Angela
 	 * @return the transformed statement
 	 */
 	private String transformIWantToStatement(String statement)
-	{
-        return chatBot.transformIWantToStatement(statement);
+	{String response = "";
+		if (chatBot.findKeyword(statement, "I want to", 0) >= 0)
+		{
+			response = chatBot.transformIWantToStatement(statement);
+		}
+		else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
+		{
+			response = chatBot.transformIWantStatement(statement);
+		}
+		else
+		{
+			response = getRandomResponse();
+		}
+		return chatBot.transformIWantToStatement(statement);
 	}
 
 
@@ -124,7 +141,19 @@ public class ChatBlackButler_Angela
 	 * @return the transformed statement
 	 */
 	private String transformIWantStatement(String statement)
-	{
+	{String response = "";
+        if (chatBot.findKeyword(statement, "I want", 0) >= 0)
+        {
+            response = chatBot.transformIWantToStatement(statement);
+        }
+        else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
+        {
+            response = chatBot.transformIWantStatement(statement);
+        }
+        else
+        {
+            response = getRandomResponse();
+        }
         return chatBot.transformIWantStatement(statement);
 	}
 	
@@ -136,7 +165,19 @@ public class ChatBlackButler_Angela
 	 * @return the transformed statement
 	 */
 	private String transformIYouStatement(String statement)
-	{
+	{String response = "";
+        if (chatBot.findKeyword(statement, "I", 0) >= 0 )
+        {
+            response = chatBot.transformIWantToStatement(statement);
+        }
+        else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
+        {
+            response = chatBot.transformIWantStatement(statement);
+        }
+        else
+        {
+            response = getRandomResponse();
+        }
         return chatBot.transformIYouStatement(statement);
 	}
 	
@@ -198,13 +239,15 @@ public class ChatBlackButler_Angela
 		return randomHappyResponses [r.nextInt(randomHappyResponses.length)];
 	}
 	
-	private String [] randomNeutralResponses = {"Interesting...what did you say again?",
-			"Hmmm...still dont get you",
-			"I don't understand",
-			"you mean?",
-			"Could you say that again?",
-			"Do you want to know something about Black Butler?"
-	};
+	private String [] randomNeutralResponses =
+            {
+                    "Interesting...what did you say again?",
+                    "Hmmm...still dont get you",
+                    "I don't understand",
+                    "you mean?",
+                    "Could you say that again?",
+                    "Do you want to know something about Black Butler?"
+            };
 	private String [] randomAngryResponses = {"Bubbles!", "Hmph", "What are you saying!"};
 	private String [] randomHappyResponses = {"Hurray!", "Yippie!", "Yahoo!"};
 	
