@@ -88,7 +88,7 @@ public class ChatRwby_Rachel
 			response = "RWBY is made with Poser Pro animation software, which is also used for Rooster Teeth Production's other series such as Red vs. Blue.";
 		} else if (chatBot.findKeyword(statement, "created") >= 0)
 		{
-			response = "RWBY was created bt Monty Oum, an American animator and writer. He died from an allergic reaction during a medical procedure that put him into a coma at the afe of 33.";
+			response = "RWBY was created by Monty Oum, an American animator and writer. He died from an allergic reaction during a medical procedure that put him into a coma at the age of 33.";
 			emotion--;
 		} else if (chatBot.findKeyword(statement, "Rooster Teeth") >= 0)
 		{
@@ -114,6 +114,32 @@ public class ChatRwby_Rachel
 		
 		return response;
 	}
+	
+		/**
+	 * Take a statement with "my favorite character is <something>." and transform it into 
+	 * "Why is your favorite character <something>?"
+	 * @param statement the user statement, assumed to contain "my favorite character is "
+	 * @return the transformed statement
+	 */
+	private String transformMyFavorite(String statement)
+	{
+		return chatBot.transformMyFavorite(statement);
+	}
+	
+	/*
+	String transformMyFavorite(String statement) {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        if (lastChar.equals(".")) {
+            statement = statement.substring(0, statement
+                    .length() - 1);
+        }
+        int psn = findKeyword(statement, "my favorite character is", 0);
+        String restOfStatement = statement.substring(psn + 23).trim();
+        return "Why is your favorite character" + restOfStatement + "?";
+    }
+	*/
 	
 	/**
 	 * Take a statement with "I want to <something>." and transform it into 
