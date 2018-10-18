@@ -68,6 +68,10 @@ public class ChatRwby_Rachel
 		{
 			response = "What, why?";
 			emotion--;
+		}  else if (chatBot.findKeyword(statement, "plot") >= 0)
+		{
+			response = "RWBY follows different character arcs as the students train at Beacon Academy to become Hunters and Huntresses to protect the people form the Grimm (monsters lacking soul and drawn to feelings of negativity).";
+			emotion--;
 		}  else if (chatBot.findKeyword(statement, "rwby") >= 0)
 		{
 			response = "Do you like RWBY?";
@@ -121,7 +125,7 @@ public class ChatRwby_Rachel
 	 * @param statement the user statement, assumed to contain "my favorite character is "
 	 * @return the transformed statement
 	 */
-	private String transformMyFavorite(String statement)
+	/*private String transformMyFavorite(String statement)
 	{
 		return chatBot.transformMyFavorite(statement);
 	}
