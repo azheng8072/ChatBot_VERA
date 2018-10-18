@@ -87,7 +87,7 @@ public class ChatReborn_Vincent
             response = "Reborn is an infant hitman belonging to the Vongola Family. As the most trusted member of the previous boss's family, he becomes Tsuna's home tutor and trains him into becoming a Mafia boss. For more info go to https://en.wikipedia.org/wiki/List_of_Reborn!_characters#Reborn"
         }
         else if (chatBot.findKeyword(statement, "Gokudera Hayato", 0) >=0) {
-            response = "Gokudera Hayato is the storm ring holder and  is a 14-year-old transfer student from Italy who was placed in Tsuna's class. Hayato is a dynamite expert nicknamed \"Smokin' Bomb Hayato\", and he strives to be Tsuna's right hand man."
+            response = "Gokudera Hayato is the storm ring holder and  is a 14-year-old transfer student from Italy who was placed in Tsuna's class. Hayato is a dynamite expert nicknamed \"Smokin' Bomb Hayato\", and he strives to be Tsuna's right hand man. For more info, go to https://en.wikipedia.org/wiki/Hayato_Gokudera"
         }
 		else
 		{
