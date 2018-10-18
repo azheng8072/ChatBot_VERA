@@ -89,136 +89,28 @@ public class ChatBlackButler_Angela
 		}
 
 		// Response transforming I want to statement
-        else if (chatBot.findKeyword(statement, "I want to", 0) >= 0) {
+        else if (chatBot.findKeyword(statement, "I want to", 0) >= 0)
+        {
             response = chatBot.transformIWantToStatement(statement);
-        } else if (chatBot.findKeyword(statement, "I want", 0) >= 0) {
+        }
+        else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
+        {
             response = chatBot.transformIWantStatement(statement);
+		}
+		else if (chatBot.findKeyword(statement, "I", 0) >= 0 && chatBot.findKeyword(statement, "you", 0) >= 0)
+		{
+			response = chatBot.transformIYouStatement(statement);
 		}
 		else
 		{
 			response = getRandomResponse();
 		}
 
-        transformIWantToStatement(statement);
-        transformIWantStatement(statement);
-        transformIYouStatement(statement);
 
 
 		return response;
 	}
 
-
-	
-	/**
-	 * Take a statement with "I want to <something>." and transform it into 
-	 * "Why do you want to <something>?"
-	 * @param statement the user statement, assumed to contain "I want to"
-	 * @return the transformed statement
-	 */
-	private String transformIWantToStatement(String statement)
-	{String response = "";
-		if (chatBot.findKeyword(statement, "I want to", 0) >= 0)
-		{
-			response = chatBot.transformIWantToStatement(statement);
-		}
-		else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
-		{
-			response = chatBot.transformIWantStatement(statement);
-		}
-		else
-		{
-			response = getRandomResponse();
-		}
-		return chatBot.transformIWantToStatement(statement);
-	}
-
-
-	
-	/**
-	 * Take a statement with "I want <something>." and transform it into 
-	 * "Would you really be happy if you had <something>?"
-	 * @param statement the user statement, assumed to contain "I want"
-	 * @return the transformed statement
-	 */
-	private String transformIWantStatement(String statement)
-	{String response = "";
-        if (chatBot.findKeyword(statement, "I want", 0) >= 0)
-        {
-            response = chatBot.transformIWantToStatement(statement);
-        }
-        else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
-        {
-            response = chatBot.transformIWantStatement(statement);
-        }
-        else
-        {
-            response = getRandomResponse();
-        }
-        return chatBot.transformIWantStatement(statement);
-	}
-	
-	
-	/**
-	 * Take a statement with "I <something> you" and transform it into 
-	 * "Why do you <something> me?"
-	 * @param statement the user statement, assumed to contain "I" followed by "you"
-	 * @return the transformed statement
-	 */
-	private String transformIYouStatement(String statement)
-	{String response = "";
-        if (chatBot.findKeyword(statement, "I", 0) >= 0 )
-        {
-            response = chatBot.transformIWantToStatement(statement);
-        }
-        else if (chatBot.findKeyword(statement, "I want", 0) >= 0)
-        {
-            response = chatBot.transformIWantStatement(statement);
-        }
-        else
-        {
-            response = getRandomResponse();
-        }
-        return chatBot.transformIYouStatement(statement);
-	}
-	
-
-	
-	
-	/**
-	 * Search for one word in phrase. The search is not case
-	 * sensitive. This method will check that the given goal
-	 * is not a substring of a longer string (so, for
-	 * example, "I know" does not contain "no").
-	 *
-	 * @param statement
-	 *            the string to search
-	 * @param goal
-	 *            the string to search for
-	 * @param startPos
-	 *            the character of the string to begin the
-	 *            search at
-	 * @return the index of the first occurrence of goal in
-	 *         statement or -1 if it's not found
-	 */
-	private int findKeyword(String statement, String goal,
-			int startPos)
-	{
-        return chatBot.findKeyword(statement, goal, startPos);
-	}
-	
-	/**
-	 * Search for one word in phrase.  The search is not case sensitive.
-	 * This method will check that the given goal is not a substring of a longer string
-	 * (so, for example, "I know" does not contain "no").  The search begins at the beginning of the string.  
-	 * @param statement the string to search
-	 * @param goal the string to search for
-	 * @return the index of the first occurrence of goal in statement or -1 if it's not found
-	 */
-	private int findKeyword(String statement, String goal)
-	{
-        return chatBot.findKeyword(statement, goal);
-	}
-	
 
 
 	/**
