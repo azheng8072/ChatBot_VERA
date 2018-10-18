@@ -78,16 +78,16 @@ public class ChatReborn_Vincent
 		}
 
 		else if (chatBot.findKeyword(statement, "characters", 0) >=0){
-		    response = "The main characters of the series are Tsunayoshi Sawada, Reborn, Gokudera Hayato, Takeshi Yamamoto, Lambo, Ryohei Sasagawa, Kyoya Hibari, Mukuro Rokudo, and Chrome Dokuro. To learn more about a specific character, just type their name."
+		    response = "The main characters of the series are Tsunayoshi Sawada, Reborn, Gokudera Hayato, Takeshi Yamamoto, Lambo, Ryohei Sasagawa, Kyoya Hibari, Mukuro Rokudo, and Chrome Dokuro. To learn more about a specific character, just type their name.";
         }
-        else if (chatBot.findKeyword(statement, "Tsunayoshi Sawada", 0) >=0){
-            response = "Tsunayoshi Sawada, usually called Tsuna, is the main character of the series. Tsuna is a junior-high student who becomes the boss-in-training for the Vongola Family's mafia, a mafia that exists in Italy. He is the one who is to be the next leader of the Vongola, the tenth Vongola boss and it is later revealed he is the holder of the sky ring. To set him up to that position, hitman Reborn becomes his home tutor and trains him to be a suitable boss. With Reborn's help, Tsuna confronts his fears and befriends several people, some of which become his guardians within the Vongola Family. However, due to Tsuna's high position in the Mafia, various other families conspire to kill Tsuna, which forces him and his friends to stand up to their enemies. For mor info, go to https://en.wikipedia.org/wiki/Tsuna_Sawada"
+        else if (chatBot.findKeyword(statement, "Tsunayoshi Sawada", 0) >=0){;
+            response = "Tsunayoshi Sawada, usually called Tsuna, is the main character of the series. Tsuna is a junior-high student who becomes the boss-in-training for the Vongola Family's mafia, a mafia that exists in Italy. He is the one who is to be the next leader of the Vongola, the tenth Vongola boss and it is later revealed he is the holder of the sky ring. To set him up to that position, hitman Reborn becomes his home tutor and trains him to be a suitable boss. With Reborn's help, Tsuna confronts his fears and befriends several people, some of which become his guardians within the Vongola Family. However, due to Tsuna's high position in the Mafia, various other families conspire to kill Tsuna, which forces him and his friends to stand up to their enemies. For mor info, go to https://en.wikipedia.org/wiki/Tsuna_Sawada";
         }
         else if (chatBot.findKeyword(statement, "Reborn", 0) >=0) {
-            response = "Reborn is an infant hitman belonging to the Vongola Family. As the most trusted member of the previous boss's family, he becomes Tsuna's home tutor and trains him into becoming a Mafia boss. For more info go to https://en.wikipedia.org/wiki/List_of_Reborn!_characters#Reborn"
+            response = "Reborn is an infant hitman belonging to the Vongola Family. As the most trusted member of the previous boss's family, he becomes Tsuna's home tutor and trains him into becoming a Mafia boss. For more info go to https://en.wikipedia.org/wiki/List_of_Reborn!_characters#Reborn";
         }
         else if (chatBot.findKeyword(statement, "Gokudera Hayato", 0) >=0) {
-            response = "Gokudera Hayato is the storm ring holder and  is a 14-year-old transfer student from Italy who was placed in Tsuna's class. Hayato is a dynamite expert nicknamed \"Smokin' Bomb Hayato\", and he strives to be Tsuna's right hand man. For more info, go to https://en.wikipedia.org/wiki/Hayato_Gokudera"
+            response = "Gokudera Hayato is the storm ring holder and  is a 14-year-old transfer student from Italy who was placed in Tsuna's class. Hayato is a dynamite expert nicknamed Smokin' Bomb Hayato, and he strives to be Tsuna's right hand man. For more info, go to https://en.wikipedia.org/wiki/Hayato_Gokudera";
         }
 		else
 		{
