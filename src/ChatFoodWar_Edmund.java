@@ -9,6 +9,7 @@ import java.util.Scanner;
  */
 public class ChatFoodWar_Edmund
 {
+	private final DialogFlow comm = new DialogFlow("d58bb98417f14ec1857725027e11bb26", 20170712);
 	private final ChatBot chatBot = new ChatBot();
 	// emotion can alter the way our bot responds. Emotion can become more negative or positive over time.
 	int emotion = 0;
@@ -42,7 +43,7 @@ public class ChatFoodWar_Edmund
 	 */	
 	public String getGreeting()
 	{
-		return "Hi, what is up?";
+		return "Hello, this bot can say stuff regarding Shokugeki no Soma (or Food Wars).";
 	}
 	
 	/**
@@ -59,20 +60,27 @@ public class ChatFoodWar_Edmund
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
-		} else if (chatBot.findKeyword(statement, "no") >= 0)
+		}
+		// Seems to be a good spot for DialogFlow
+		// Characters intent works but not to point of expectation
+		else if (this.comm.hasResponse(statement)) {
+			response = this.comm.getResponse();
+		}
+		else if (chatBot.findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
                 	emotion--;
-		} else if (chatBot.findKeyword(statement, "levin") >= 0)
+		}
+		else if (chatBot.findKeyword(statement, "levin") >= 0)
 		{
 			response = "More like LevinTheDream amiright?";
 			emotion++;
 		}
-
 		// Response transforming I want to statement
 		else if (chatBot.findKeyword(statement, "I want to", 0) >= 0) {
 			response = chatBot.transformIWantToStatement(statement);
-		} else if (chatBot.findKeyword(statement, "I want", 0) >= 0) {
+		}
+		else if (chatBot.findKeyword(statement, "I want", 0) >= 0) {
 			response = chatBot.transformIWantStatement(statement);
 		}	
 		else
