@@ -18,27 +18,36 @@ public class ChatBotRunner
 		ChatRwby_Rachel chatbot3 = new ChatRwby_Rachel();
 		ChatReborn_Vincent chatbot4 = new ChatReborn_Vincent();
 
-		
-		
-
 		Scanner in = new Scanner (System.in);
+		System.out.println("Which bot do you wish to use? (0-3)");
+		// Keep Scanner consistent using .nextLine()
+		int chosenBot = Integer.valueOf(in.nextLine().trim());
+
 		System.out.println("Welcome to the chatbot, nice to meet you.");
 		String statement = in.nextLine();
 
 
 		while (!statement.equals("Bye"))
 		{
-			//Use Logic to control which chatbot is handling the conversation\
-			//This example has only chatbot1
-
-
-
-			chatbot1.chatLoop(statement);
-
+			// A not so ideal way to use multiple bots
+			switch (chosenBot) {
+				case 0:
+					chatbot1.chatLoop(statement);
+					break;
+				case 1:
+					chatbot2.chatLoop(statement);
+					break;
+				case 2:
+					chatbot3.chatLoop(statement);
+					break;
+				case 3:
+					chatbot4.chatLoop(statement);
+					break;
+				default:
+					System.exit(1);
+			}
 
 			statement = in.nextLine();
-
-
 		}
 	}
 
