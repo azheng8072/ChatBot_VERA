@@ -65,6 +65,10 @@ public class ChatFoodWar_Edmund
 		}
 		// Seems to be a good spot for DialogFlow
 		// Characters intent works but not to point of expectation
+		else if (chatBot.findKeyword(statement, "bye") >= 0)
+		{
+			System.exit(1);
+		}
 		else if (this.comm.hasResponse(statement)) {
 			response = this.comm.getResponse();
 		}
