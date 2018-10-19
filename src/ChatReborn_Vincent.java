@@ -1,3 +1,4 @@
+//VINCENT BOND_MOORE
 import java.util.Random;
 import java.util.Scanner;
 
@@ -80,6 +81,9 @@ public class ChatReborn_Vincent
 		else if (chatBot.findKeyword(statement, "characters", 0) >=0){
 		    response = "The main characters of the series are Tsunayoshi Sawada, Reborn, Gokudera Hayato, Takeshi Yamamoto, Lambo, Ryohei Sasagawa, Kyoya Hibari, Mukuro Rokudo, and Chrome Dokuro. To learn more about a specific character, just type their name.";
         }
+	else if (chatBot.findKeyword(statement, "bye") >= 0){
+		System.exit(1);
+	}
         else if (chatBot.findKeyword(statement, "Tsunayoshi Sawada", 0) >=0){;
             response = "Tsunayoshi Sawada, usually called Tsuna, is the main character of the series. Tsuna is a junior-high student who becomes the boss-in-training for the Vongola Family's mafia, a mafia that exists in Italy. He is the one who is to be the next leader of the Vongola, the tenth Vongola boss and it is later revealed he is the holder of the sky ring. To set him up to that position, hitman Reborn becomes his home tutor and trains him to be a suitable boss. With Reborn's help, Tsuna confronts his fears and befriends several people, some of which become his guardians within the Vongola Family. However, due to Tsuna's high position in the Mafia, various other families conspire to kill Tsuna, which forces him and his friends to stand up to their enemies. For mor info, go to https://en.wikipedia.org/wiki/Tsuna_Sawada";
         }
