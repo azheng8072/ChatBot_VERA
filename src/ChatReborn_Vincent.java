@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * A program to carry on conversations with a human user.
  * This version:
- * @author Brooklyn Tech CS Department
+ * @author Vincent Bond-Moore
  * @version September 2018
  */
 public class ChatReborn_Vincent
@@ -88,6 +88,27 @@ public class ChatReborn_Vincent
         }
         else if (chatBot.findKeyword(statement, "Gokudera Hayato", 0) >=0) {
             response = "Gokudera Hayato is the storm ring holder and  is a 14-year-old transfer student from Italy who was placed in Tsuna's class. Hayato is a dynamite expert nicknamed Smokin' Bomb Hayato, and he strives to be Tsuna's right hand man. For more info, go to https://en.wikipedia.org/wiki/Hayato_Gokudera";
+        }
+		else if (chatBot.findKeyword(statement, "Takeshi Yamamoto", 0) >=0) {
+            response = "Takeshi Yamamoto is the 14-year-old popular baseball star of Namimori Middle School. He has a carefree and outgoing personality, but he initially has no confidence in doing anything other than baseball. After Tsuna reassures him, the two become close friends, and Reborn tries to recruit him into the Vongola Family. He is the Guardian of the Rain Ring. For more info go to https://en.wikipedia.org/wiki/Takeshi_Yamamoto";
+        }
+        else if (chatBot.findKeyword(statement, "Lambo", 0) >=0) {
+            response = "Lambo is a cow suit-clad 5-year-old assassin from Italy affiliated with the Bovino Family. He has a huge afro with horns on the sides of his head. In order to prove that he is worthy of becoming his own family's boss, he comes to Japan to kill Reborn, though he only proves that he is no match for the Vongola hitman. He is the Guardian of the Lightning Ring";
+        }
+        else if (chatBot.findKeyword(statement, "Ryohei Sasagawa", 0) >=0) {
+            response = "Ryohei Sasagawa is the 15-year-old passionate member of the boxing club at Namimori Middle School. He constantly asks others he believe are strong to join his club, most notably Tsuna. In response, Reborn wants to recruit him into Tsuna's family. Every time he sees Tsuna and his family doing something strange, he gets fired up and always wants to be a part of it. Because of his energetic character, however, he does not understand the full extent of Tsuna's connection with the Mafia, but still does everything that he can to protect him and fights with as much spirit and confidence as the others. Proficient in hand-to-hand combat, his boxing training lead to his peak physical condition. He is Tsuna's Guardian of the Sun Ring. For more info go to https://en.wikipedia.org/wiki/Ryohei_Sasagawa";
+        }
+        else if (chatBot.findKeyword(statement, "Kyoyo Hibari", 0) >=0) {
+            response = "Kyoya Hibari is the leader of Namimori's Discipline Committee, or Prefects, whose members happen to be a group of delinquents loyal to him despite his lack of care for them. Though he mostly speaks in a calm tone, Hibari is an excellent but violent fighter himself, who uses a pair of tonfa as his primary weapons. Despite caring little about the events surrounding Tsuna and his friends, Hibari takes a great interest in Reborn after seeing his abilities, which is reciprocated by Reborn, who wants to recruit him as part of Tsuna's own family. He is Tsuna's Guardian of the Cloud Ring.";
+        }
+        else if (chatBot.findKeyword(statement, "Mukuro Rokudo", 0) >=0) {
+            response = "Mukuro Rokudo is a 15-year-old Mafia criminal who escaped from an Italian prison, which held some of the most dangerous Mafia criminals, before he was to be executed. Not long after, he came to Japan, enrolled in Kokuyo Junior High, and started the Kokuyo Gang, which consists of criminals who have recently escaped from prison. He is skilled in casting illusions as well as mind control. He attempts to take his revenge on the Mafia but when his plan fails due to Tsuna's interference, he is once again imprisoned. However, later on in the series, after possessing the body of Kokuyo's Chrome Dokuro, he takes on a more supportive role for the series' main characters, though still prefers not to associate with them. For more info go to https://en.wikipedia.org/wiki/Mukuro_Rokudo";
+        }
+        else if (chatBot.findKeyword(statement, "Chrome Dokuro", 0) >=0) {
+            response = "Chrome Dokuro is a 13-year-old Japanese girl who is recruited by Kokuyo Gang. She was originally known as Nagi until Mukuro Rokudo saved her life by creating illusionary organs for her when she lost her right eye and some of her internal organs in an accident. Since then she and Mukuro are sharing one body. Chrome is named the holder of the Vongola Mist Ring. For more info go to https://en.wikipedia.org/wiki/Chrome_Dokuro";
+        }
+        else if (chatBot.findKeyword(statement, "plot", 0) >=0) {
+            response = "In Reborn! a boy, Tsunayoshi \"Tsuna\" Sawada, is chosen to become the tenth boss of the Vongola Family, as he is the great-great-great-great grandson of the first Vongola boss—who moved to Japan from Italy. Timoteo, the Vongola IX—the current head of the family—, sends Reborn, an infant hitman from Italy, to train the reluctant Tsuna. Reborn's chief teaching method is the \"Dying Will Bullet\", which causes a person to be \"reborn\" with a stronger self to execute his dying wish. The clumsy, underachieving Tsuna becomes stronger, more confident and willing, making him a suitable Vongola family boss despite his continued reluctance. He makes several friends, including his love interest Kyoko Sasagawa. For more info go to https://en.wikipedia.org/wiki/Reborn!";
         }
 		else
 		{
@@ -203,3 +224,4 @@ public class ChatReborn_Vincent
 	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
 	
 }
+
