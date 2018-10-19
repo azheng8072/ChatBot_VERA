@@ -42,7 +42,8 @@ public class ChatBlackButler_Angela
 	 */	
 	public String getGreeting()
 	{
-		return "Hi, what's up?";
+		return "Wanna learn about Black Butler? type in the name, plot, or even main characters to learn more. :)" +
+				"\nIf you want to leave just type in bye.";
 	}
 	
 	/**
@@ -59,6 +60,10 @@ public class ChatBlackButler_Angela
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
+		}
+		else if (chatBot.findKeyword(statement, "bye") >= 0)
+		{
+			System.exit(1);
 		}
 		// USE THIS AS EXAMPLE. you caN CHAnge goal to be a certain word in sentence to give answer.
         // response can be changed based on the found word
@@ -133,12 +138,8 @@ public class ChatBlackButler_Angela
 	
 	private String [] randomNeutralResponses =
             {
-                    "Interesting...what did you say again?",
-                    "Hmmm...still dont get you",
-                    "I don't understand",
-                    "you mean?",
-                    "Could you say that again?",
-                    "Do you want to know something about Black Butler?"
+                    "Type Black Butler to learn about Black Butler"
+
             };
 	private String [] randomAngryResponses = {"Bubbles!", "Hmph", "What are you saying!"};
 	private String [] randomHappyResponses = {"Hurray!", "Yippie!", "Yahoo!"};

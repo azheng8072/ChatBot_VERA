@@ -1,3 +1,4 @@
+//ANGELA ZHENG
 import java.util.Scanner;
 
 /**
@@ -19,11 +20,15 @@ public class ChatBotRunner
 		ChatReborn_Vincent chatbot4 = new ChatReborn_Vincent();
 
 		Scanner in = new Scanner (System.in);
-		System.out.println("Which bot do you wish to use? (0-3)");
+		System.out.println("This chatbot has 4 different chats in it. The theme is ANIME!!!! type 0-3 to choose a bot." +
+				"\n0 = Black Butler" +
+				"\n1 = Food War" +
+				"\n2 = Rwby" +
+				"\n3 = Reborn");
 		// Keep Scanner consistent using .nextLine()
 		int chosenBot = Integer.valueOf(in.nextLine().trim());
 
-		System.out.println("Welcome to the chatbot, nice to meet you.");
+		System.out.println("Welcome to the Anime chatbot, nice to meet you.");
 		String statement = in.nextLine();
 
 

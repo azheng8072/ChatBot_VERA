@@ -1,3 +1,4 @@
+//All the transformation codes are here, it is called by each chatbot when needed
 public class ChatBot {
     /**
      * Take a statement with "I want to <something>." and transform it into

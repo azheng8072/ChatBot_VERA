@@ -1,3 +1,4 @@
+//RACHEL SHEK
 import java.util.Random;
 import java.util.Scanner;
 
@@ -60,6 +61,9 @@ public class ChatRwby_Rachel
 		if (statement.length() == 0)
 		{
 			response = "Do you like RWBY?";
+		} else if (chatBot.findKeyword(statement, "bye") >= 0)
+		{
+			System.exit(1);
 		} else if (chatBot.findKeyword(statement, "yes") >= 0)
 		{
 			response = "Me too!";
